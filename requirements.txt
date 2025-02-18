@@ -1,6 +1,6 @@
-streamlit
-requests
-matplotlib
-beautifulsoup4
-dotenv
-openai
+streamlit==1.42.1
+requests==2.32.3
+matplotlib==3.10.0
+beautifulsoup4==4.13.3
+python-dotenv==0.21.0
+openai==0.9.2
