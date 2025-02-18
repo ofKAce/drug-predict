@@ -98,7 +98,7 @@ def extract_sideEffect(sideEffect_text):
     if not sideEffect_text.strip():
         return "No valid side-effect text found."
     try:
-        response = client.chat.completions.create(
+        response = openai.ChatCompletion.create(
             model="mixtral-8x7b-32768",
             messages=[
                 {"role": "system", "content": "The given text describes side effects of a medical drug. Provide a summary."},
