@@ -10,11 +10,10 @@ import openai
 # Load environment variables from .env file
 load_dotenv()
 
-# Initialize OpenAI API Client (Groq API)
-client = openai.OpenAI(
-    base_url="https://api.groq.com/openai/v1",
-    api_key=os.getenv("GROQ_API_KEY")  # Replace with your actual API key
-)
+# Set API key for Groq
+openai.api_base = "https://api.groq.com/openai/v1"
+openai.api_key = os.getenv("GROQ_API_KEY")
+
 
 BASE_URL = "https://www.drugs.com"
 
@@ -53,7 +52,7 @@ def get_additional_links(drug_url):
 
 def extract_sentiment_with_ai(review_text):
     try:
-        response = client.chat.completions.create(
+        response = openai.ChatCompletion.create(
             model="mixtral-8x7b-32768",
             messages=[
                 {"role": "system", "content": "Predict whether the review is Positive or Negative."},
