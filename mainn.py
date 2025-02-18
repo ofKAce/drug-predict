@@ -3,7 +3,6 @@ import requests
 import matplotlib.pyplot as plt
 import base64
 from bs4 import BeautifulSoup
-from openai import OpenAI
 import os
 from dotenv import load_dotenv
 import openai
